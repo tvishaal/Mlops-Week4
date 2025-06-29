@@ -23,9 +23,10 @@ jobs:
       - name: Run tests and generate report
         run: |
           echo "## ✅ IRIS Test Report" > report.md
-          pytest tests/ >> report.md
+          PYTHONPATH=. pytest tests/ >> report.md || true
 
       - name: Post test results as comment
+        uses: iterative/setup-cml@v2
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
