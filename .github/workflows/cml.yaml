@@ -2,7 +2,6 @@ name: IRIS Pipeline Sanity Test
 
 on: [pull_request]
 
-
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -20,6 +19,7 @@ jobs:
         run: |
           pip install scikit-learn
           pip install pytest
+          pip install cml
 
       - name: Run tests and generate report
         run: |
@@ -27,7 +27,6 @@ jobs:
           pytest tests/ >> report.md
 
       - name: Post test results as comment
-        uses: iterative/setup-cml@v2
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
