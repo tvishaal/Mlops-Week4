@@ -17,8 +17,15 @@ def train_model(X, y):
     preds = model.predict(X_test)
     acc = accuracy_score(y_test, preds)
     return model, acc
+  
 
+
+  
 def predict(model, sample):
     return model.predict([sample])[0]
 
+def save_model(model, path='iris_model.pkl'):
+    joblib.dump(model, path)
 
+def load_model(path='iris_model.pkl'):
+    return joblib.load(path)
