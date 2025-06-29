@@ -21,9 +21,4 @@ def train_model(X, y):
 def predict(model, sample):
     return model.predict([sample])[0]
 
-def save_model(model, path='iris_model.pkl'):
-    joblib.dump(model, path)
-
-def load_model(path='iris_model.pkl'):
-    return joblib.load(path)
 
