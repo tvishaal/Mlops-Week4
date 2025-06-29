@@ -17,8 +17,10 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-          pip install pytest cml
+          pip install --upgrade pip setuptools wheel
+          pip install scikit-learn
+          pip install pytest
+          pip install cml
 
       - name: Run tests and generate report
         run: |
@@ -30,4 +32,3 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           cml comment report.md
-
