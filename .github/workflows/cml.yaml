@@ -17,17 +17,15 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install --upgrade pip setuptools wheel
           pip install scikit-learn
           pip install pytest
 
       - name: Run tests and generate report
         run: |
           echo "## ✅ IRIS Test Report" > report.md
-          PYTHONPATH=. pytest tests/ >> report.md || true
+          pytest tests/ >> report.md
 
       - name: Post test results as comment
-        uses: iterative/setup-cml@v2
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
