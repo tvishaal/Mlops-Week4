@@ -1,3 +1,6 @@
+
+# iris_pipeline/iris.py
+import joblib
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -17,3 +20,10 @@ def train_model(X, y):
 
 def predict(model, sample):
     return model.predict([sample])[0]
+
+def save_model(model, path='iris_model.pkl'):
+    joblib.dump(model, path)
+
+def load_model(path='iris_model.pkl'):
+    return joblib.load(path)
+
