@@ -1,20 +1,19 @@
-# tests/test_iris.py
-from iris_pipeline.iris import load_data, train_model, predict
+from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
 
-def test_data_shape():
-    X, y = load_data()
-    assert X.shape[0] == len(y)
-    assert X.shape[1] == 4  # 4 features in IRIS
+def load_data():
+    data = load_iris()
+    return data.data, data.target
 
-def test_model_accuracy():
-    X, y = load_data()
-    model, acc = train_model(X, y)
-    assert acc > 0.7
+def train_model(X, y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+    model = RandomForestClassifier()
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    acc = accuracy_score(y_test, preds)
+    return model, acc
 
-def test_single_prediction():
-    X, y = load_data()
-    model, _ = train_model(X, y)
-    sample = X[0]
-    pred = predict(model, sample)
-    assert isinstance(pred, int) or isinstance(pred, float)
-    assert 0 <= pred <= 2  # IRIS has 3 classes (0, 1, 2)
+def predict(model, sample):
+    return model.predict([sample])[0]
