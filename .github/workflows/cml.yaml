@@ -19,7 +19,6 @@ jobs:
         run: |
           pip install scikit-learn
           pip install pytest
-          pip install cml
 
       - name: Run tests and generate report
         run: |
