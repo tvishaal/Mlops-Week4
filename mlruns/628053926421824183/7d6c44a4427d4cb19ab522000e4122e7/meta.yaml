@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/628053926421824183/7d6c44a4427d4cb19ab522000e4122e7/artifacts
+end_time: 1751827201141
+entry_point_name: ''
+experiment_id: '628053926421824183'
+lifecycle_stage: active
+run_id: 7d6c44a4427d4cb19ab522000e4122e7
+run_name: angry-swan-158
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751827195549
+status: 3
+tags: []
+user_id: jupyter

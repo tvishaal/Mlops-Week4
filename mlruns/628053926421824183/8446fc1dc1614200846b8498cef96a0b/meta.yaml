@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/628053926421824183/8446fc1dc1614200846b8498cef96a0b/artifacts
+end_time: 1751827319775
+entry_point_name: ''
+experiment_id: '628053926421824183'
+lifecycle_stage: active
+run_id: 8446fc1dc1614200846b8498cef96a0b
+run_name: adaptable-wasp-334
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751827314605
+status: 3
+tags: []
+user_id: jupyter

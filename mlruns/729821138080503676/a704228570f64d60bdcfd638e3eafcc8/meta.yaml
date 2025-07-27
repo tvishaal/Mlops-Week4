@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/729821138080503676/a704228570f64d60bdcfd638e3eafcc8/artifacts
+end_time: 1751828285224
+entry_point_name: ''
+experiment_id: '729821138080503676'
+lifecycle_stage: active
+run_id: a704228570f64d60bdcfd638e3eafcc8
+run_name: stately-crane-7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1751828280968
+status: 3
+tags: []
+user_id: jupyter
